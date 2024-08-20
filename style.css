@@ -5,6 +5,7 @@
 }
 html{overflow-x: hidden;}
 body{
+  height: 1917px;
   background-color: #0B1D26;
 }
 #body{
@@ -14,6 +15,7 @@ body{
   max-width: 1300px;
   padding-top: 64px;
   margin: 0 auto;
+  animation: ct-anim 2s 1;
 }
 .clearfix{
   clear: both;
@@ -57,6 +59,7 @@ header{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  animation: ct-anim 2s 1;
 }
 header #center-title{
   width: 53%;
@@ -74,8 +77,8 @@ header #center-title #line{
   margin-right: 10px;
   margin-top: 8px;
   border: 1px solid #FBD784;
-  width: 72px;
   float: left;
+  animation: ahikingguide-line-anim 2s forwards;
 }
 header #center-title #beprepared span{
   font-family: 'Chronicle Display', sans-serif;
@@ -85,12 +88,17 @@ header #center-title #beprepared span{
 }
 header #center-title #beprepared{margin-bottom: 32px;}
 header #center-title #ahikingguide{
+  position: relative;
   margin-bottom: 32px;
+  animation: ahikingguide-anim 2s 1;
 }
 header #center-title #scrolldown{
+  position: relative;
+  left: 90em;
   display: flex;
   align-items: center;
   flex-direction: row;
+  animation: 1s ease-out scrolldown-anim 0.5s forwards;
 }
 header #center-title #scrolldown img{
   margin-left: 15px;
@@ -227,6 +235,8 @@ footer #p2{
   color: rgba(255, 255, 255, 0.5);
 }
 footer #uls{
+  position: relative;
+  left: 40em;
   width: 30%;
   float: right;
   display: flex;
@@ -251,6 +261,8 @@ footer #uls ul li:first-child{
   color: #FBD784;
 }
 footer #ps{
+  position: relative;
+  right: 35em;
   display: inline-block;
 }
 footer{
@@ -341,7 +353,7 @@ footer{
     margin-left: 0;
     margin-right: 0;
   }
-  .block .img img{
+  .block .bl-img img{
     width: 283px;
   }
 }
@@ -368,4 +380,101 @@ footer{
   footer #uls{
     flex-direction: column;
   }
+}
+
+@keyframes ct-anim{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes bl-anim1{
+  from{
+    opacity: 0;
+    left: 20em;
+  }
+  to{
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes bl-anim2{
+  from{
+    opacity: 0;
+    right: 20em;
+  }
+  to{
+    opacity: 1;
+    right: 0;
+  }
+}
+@keyframes bl-anim3{
+  from{
+    opacity: 0;
+    left: 20em;
+  }
+  to{
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes ahikingguide-anim{
+  from{
+    right: 85em;
+  }
+  to{
+    right: 0;
+  }
+}
+@keyframes ahikingguide-line-anim{
+  from{
+    width: 700px;
+  }
+  to{
+    width: 60px;
+  }
+}
+@keyframes scrolldown-anim{
+  from{
+    left: 91em;
+  }
+  to{
+    left: 0;
+  }
+}
+@keyframes footer-anim{
+  from{
+    top: 30em;
+  }
+  to{
+    top: 0;
+  }
+}
+@keyframes footer-uls-anim{
+  from{
+    left: 40em;
+  }
+  to{
+    left: 0;
+  }
+}
+@keyframes footer-ps-anim{
+  from{
+    right: 35em;
+  }
+  to{
+    right: 0;
+  }
+}
+.bl-img{position: relative;}
+#bl-img1.in-view{animation: bl-anim1 2s 1;}
+#bl-img2.in-view{animation: bl-anim2 2s 1;}
+#bl-img3.in-view{animation: bl-anim3 2s 1;}
+footer #uls.in-view{
+  animation: footer-uls-anim 2s forwards;
+}
+footer #ps.in-view{
+  animation: footer-ps-anim 2s forwards;
 }
